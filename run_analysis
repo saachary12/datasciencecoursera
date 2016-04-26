@@ -83,3 +83,36 @@ J = grep("(meanFreq())", names(merged_all_new), value=TRUE)
 R = setdiff(P, J)
 
 merged_filtered <- merged_all_new[ , union(c("ID", "activity"),R)] 
+
+for(i in 1:180)
+{
+  if(i %% 6 == 1)
+  {
+           merged_filtered[i, 2] <- "WALKING"
+  }
+         
+  if(i %% 6 == 2)
+  {
+           merged_filtered[i, 2] <- "WALKING_UPSTAIRS"
+  }
+         
+  if(i %% 6 == 3)
+  {
+           merged_filtered[i, 2] <- "WALKING_DOWNSTAIRS"
+  }
+         
+  if(i %% 6 == 4)
+  {
+           merged_filtered[i, 2] <- "SITTING"
+  }
+       
+  if(i %% 6 == 5)
+  {
+           merged_filtered[i, 2] <- "STANDING"
+  }
+         
+  if(i %% 6 == 0)
+  {
+           merged_filtered[i, 2] <- "LAYING"
+  }
+}
