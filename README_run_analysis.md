@@ -6,3 +6,4 @@ We added the names of the features to the data frame.
 We used grep to remove the data based on the -mean() or -std(). 
 And the we did the data removal based on the criterion collected with grep.
 1-6 represent the ids for the activities. 
+The final for loop is where the naming of the activities occurs as the final step of the cleaning. 
