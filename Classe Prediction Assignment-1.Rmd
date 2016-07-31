@@ -1,0 +1,49 @@
+---
+title: "Classe Prediction Assignment"
+author: "Sankarshan Acharya"
+date: "July 16, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## The Model
+
+In this prediction project, I did an unusual method for predicting the classe that each of the particitpants were in. From my research, I looked up what the concept of ordered and nominal variable research was.By definition, classe is a nominal variable. Therefore I used the specialized regression techniques associated with nominal variables. 
+
+In R, there are packages that are meant to handle nominal variable regression. This package is called MASS. In MASS, there is a function called polr. This function does for ordered variables what glm does for numeric variables. What you do is pick a model type and see what kind of model you want to to fit. In this case, I used probit (there were other options to choose from). 
+
+The independent variables that I used were the respective total acceleration from the belt, arm, forearm, and the dumbbell. 
+
+
+```{r, echo=FALSE, include=FALSE}
+require(MASS)
+require(Hmisc)
+require(reshape2)
+```
+
+
+```{r, echo = FALSE}
+pml_training <- read.csv("~/pml-training.csv")
+m <- polr(classe ~ total_accel_belt + total_accel_arm + total_accel_forearm + total_accel_dumbbell, data = pml_training, Hess=TRUE)
+summary(m)
+```
+
+I also combined this in conjunction with a heurisitic model that I created from the below plots. This model looked for specific values from each of the acceleration graphs. By finding these values, I would be able to immediately tell what class the test subject is in. 
+
+## Acceleration vs. Classes
+
+The plots describe the statistics of acceleration vs. classe:
+
+```{r, echo=FALSE}
+pml_training <- read.csv("~/pml-training.csv")
+boxplot(total_accel_belt ~ classe,data = pml_training, main="Total Belt Acceleration", xlab="Exercise Specification", ylab="Total Belt Acceleration")
+boxplot(total_accel_dumbbell ~ classe, data = pml_training, main="Total Dumbbell Acceleration", xlab="Exercise Specification", ylab="Total Dumbbell Acceleration")
+boxplot(total_accel_arm ~ classe,data = pml_training, main="Total Acceleration of the Upper Arm", xlab="Exercise Specification", ylab="Total Upper Arm Acceleration")
+boxplot(total_accel_forearm ~ classe,data = pml_training, main="Total Acceleration of the Foreman", xlab="Exercise Specification", ylab="Total Forearm Acceleration")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
