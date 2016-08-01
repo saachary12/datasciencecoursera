@@ -3,4 +3,6 @@ How I built the model that I used for the project was that I used the idea that 
 model. This model was built using the MASS package and the polr function for creating the model (the results are in the pdf file for 
 convienience). This was also combined with a model based around characteristics that each of the classes had. 
 
+The html file is for the assignment and the rmd file is for your clean viewing. 
+
 I have also attached a picture describing the results using cross validation. 
