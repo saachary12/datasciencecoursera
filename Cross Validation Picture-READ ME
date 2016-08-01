@@ -1,0 +1,6 @@
+For the cross-validation png., I took the cross-validation on it and I got the results in that picture.
+
+From that picture, we can say that the out of sample error was atmost .6% at any point. And from 40 predictors onward, 
+the out of sample error became virtually zero.
+
+This is important when doing cross-validation studies. 
