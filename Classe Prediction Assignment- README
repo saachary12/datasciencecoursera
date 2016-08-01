@@ -1,0 +1,6 @@
+How I built the model that I used for the project was that I used the idea that I could use the four total accelerations
+(total_accel_belt, total_accel_dumbbell, total_accel_arm, total_accel_forearm) to predict the classe. From there I could create a regression
+model. This model was built using the MASS package and the polr function for creating the model (the results are in the pdf file for 
+convienience). This was also combined with a model based around characteristics that each of the classes had. 
+
+I have also attached a picture describing the results using cross validation. 
