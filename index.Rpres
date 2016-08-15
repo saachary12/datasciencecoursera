@@ -1,0 +1,39 @@
+Cancer Predictor: A Simple Means of Assessing your Chances of Cancer
+========================================================
+author: Sankarshan Acharya
+date: 8/12/2016
+
+
+Why do we need the app?
+========================================================
+
+There are several reasons:
+
+- There is increase in the types of cancer out there
+- People are more likely than before to get cancer (unnatural toxins, trace radioactivity, and so on)
+- In America, there is a rising epidemic of obesity (which is linked to cancer) 
+- The link for viewing obesity to cancer: http://www.cancer.gov/about-cancer/causes-prevention/risk/obesity/obesity-fact-sheet
+
+Code for the App
+========================================================
+
+```{r}
+CancerRisk <- function(bodymassindex) (bodymassindex - 18)/17
+CancerRisk(25)
+```
+
+The code for the app is simple; you simply have to calculate your BMI.
+And with the function above, you can estimate the probability of you getting cancer.
+The above example is shown with a BMI of 25 - what is considered to be borderline overweight. 
+
+How useful is it?
+========================================================
+- This app is a rudimentary attempt to calculate the probability of cancer
+- Cancer problems can occur at any time and therefore it is useful to calculate the probability
+
+
+The Super Short Summary
+========================================================
+- In conclusion, this app will be a great step in making cancer diagnostics convienient and cheap
+- With this app, people will become more informed of their risks and thus more able to make rational
+decisions about them
